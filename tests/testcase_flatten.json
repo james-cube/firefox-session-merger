@@ -1,0 +1,30 @@
+{
+    "windows": [
+        {
+            "tabs": [
+                {
+                    "entries": [
+                        {
+                            "originalURI": "about:startpage", 
+                            "title": "Ubuntu Start Page", 
+                            "url": "about:startpage"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "tabs": [
+                {
+                    "entries": [
+                        {
+                            "originalURI": "about:preferences", 
+                            "title": "Preferences", 
+                            "url": "about:preferences"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
