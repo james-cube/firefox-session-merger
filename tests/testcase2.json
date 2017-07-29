@@ -1,0 +1,26 @@
+{
+    "windows": [
+        {
+            "tabs": [
+                {
+                    "entries": [
+                        {
+                            "originalURI": "about:startpage", 
+                            "title": "Ubuntu Start Page", 
+                            "url": "about:startpage"
+                        }
+                    ]
+                },
+                {
+                    "entries": [
+                        {
+                            "originalURI": "about:addons", 
+                            "title": "Add-ons Manager", 
+                            "url": "about:addons"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
