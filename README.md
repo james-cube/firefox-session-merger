@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/james-cube/firefox-session-merger.svg?branch=master)](https://travis-ci.org/james-cube/firefox-session-merger)
+
 # firefox-session-merger
 
 Tool for merging firefox session files. Designed for people who don't want to use cloud based tools like firefox sync, want to version control their session files or have any other reason to do this locally.
