@@ -8,6 +8,8 @@ Tool for merging firefox session files. Designed for people who don't want to us
 
 ### How firefox stores session? (up to date with Firefox 54)
 
+NOTE: In recent versions of firefox `sessionsstore.js` files are compressed into `sessionstore.jsonlz4`. Automatic compression/decompression is not curently supported by this tool.
+
 After setting in `about:preferences` under `When Firefox starts` option `Show your windows and tabs from last time` and closing firefox, `sessionstore.js` file is created in profile directory. In linux it should be typically in `~/.mozilla/firefox/{profile}/`. Alternatively `~/.mozilla/firefox/{profile}/sessionstore-backups/` have few last and recovery session files. This file have information about all windows, tabs, recently closed tabs and can be ported between computers and firefox instances using simple copy-paste. 
 
 ### How to use the tool?
