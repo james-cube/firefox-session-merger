@@ -1,8 +1,16 @@
+#!/usr/bin/env python3
 import argparse
 import json
+try:
+    import lz4.block as lz4
+except ImportError:
+    import lz4
 
 def load_sessionstore_file(filename):
-    with open(filename) as json_data:
+    with open(filename, 'rb') as json_data:
+        if json_data.read(8) == b'mozLz40\0':
+            return json.loads(lz4.decompress(json_data.read()))
+        json_data.seek(0)
         return json.load(json_data)
 
 def load_sessionstore_files(filenames):
@@ -32,7 +40,7 @@ def has_duplicate_in_session(session, tab):
             if entry.get("url") == url:
                 return True
     return False
-    
+
 
 def simple_merge_into(main_session, other_session):
     for window in other_session.get("windows"):
@@ -45,8 +53,12 @@ def deep_merge_into(main_session, other_session):
             main_session.get("windows")[0].get("tabs").append(tab)
 
 def write_to_file(filename, output):
-    with open(filename, "w") as out:
-        out.write(output)
+    with open(filename, "wb") as out:
+        output = output.encode('utf-8')
+        if filename.find(".jsonlz4") >= 0:
+            out.write(b'mozLz40\0' + lz4.compress(output))
+        else:
+            out.write(output)
 
 def main():
     parser = argparse.ArgumentParser()
